@@ -7,6 +7,7 @@ const cors  = require ("cors")
 const userRoute = require("./routes/users")
 const authRoute = require("./routes/auth")
 const postRoute = require("./routes/posts")
+const path = require("path");
 require ("dotenv").config()
 
 
@@ -25,6 +26,12 @@ server.use(morgan("common"))
 server.use("/api/users", userRoute)
 server.use("/api/auth", authRoute)
 server.use("/api/posts", postRoute)
+server.use(express.static(path.join(__dirname,"./client/build")))
+
+
+server.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname + "/client/build/index.html"))
+})
 
 const port = 8080
 server.listen(process.env.PORT || port, ()=> {
