@@ -26,11 +26,11 @@ server.use(morgan("common"))
 server.use("/api/users", userRoute)
 server.use("/api/auth", authRoute)
 server.use("/api/posts", postRoute)
-server.use(express.static(path.join(__dirname,"./client/build")))
+server.use(express.static(path.join(__dirname,"./client2/build")))
 
 
 server.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname + "/client/build/index.html"))
+    res.sendFile(path.join(__dirname + "/client2/build/index.html"))
 })
 
 const port = 8080
