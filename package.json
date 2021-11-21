@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node script.js",
-    "server": "nodemon script.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "client": "yarn --cwd client2  start",
     "dev": "concurrently \"yarn run server\" \"yarn run client\"",
     "heroku-postbuild": "cd client2 && yarn && yarn run build"
