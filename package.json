@@ -4,12 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server",
-    "client": "yarn --cwd client2 start",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\" ",
-    "heroku-postbuild": "cd client2 && yarn && yarn run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node script.js",
+    "server": "nodemon script.js",
+    "client": "yarn --cwd client2  start",
+    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
+    "heroku-postbuild": "cd client2 && yarn && yarn run build"
   },
   "author": "",
   "license": "ISC",
